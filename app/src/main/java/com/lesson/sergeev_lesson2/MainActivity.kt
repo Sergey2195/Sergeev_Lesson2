@@ -11,7 +11,7 @@ import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    val activityLauncher = registerForActivityResult(SecondActivityContract()) { result ->
+    private val activityLauncher = registerForActivityResult(SecondActivityContract()) { result ->
         when (result) {
             null -> resultFailure()
             else -> resultSuccess(result)

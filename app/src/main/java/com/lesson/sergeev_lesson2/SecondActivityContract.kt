@@ -13,7 +13,6 @@ class SecondActivityContract: ActivityResultContract<Unit, String?>() {
     override fun parseResult(resultCode: Int, intent: Intent?): String? {
         return if (resultCode != Activity.RESULT_OK
             || intent?.getStringExtra(SecondActivity.STRING_KEY) == null
-            || (intent.getStringExtra(SecondActivity.STRING_KEY) ?: "") == ""
         ){
             null
         }else{

@@ -25,7 +25,11 @@ class SecondActivity : AppCompatActivity() {
     private fun sendResult() {
         val text = binding.editTextSecond.text.toString()
         val result = Intent().putExtra(STRING_KEY, text)
-        setResult(Activity.RESULT_OK, result)
+        if (text.isBlank()){
+            setResult(Activity.RESULT_CANCELED, result)
+        }else{
+            setResult(Activity.RESULT_OK, result)
+        }
         finish()
     }
 
