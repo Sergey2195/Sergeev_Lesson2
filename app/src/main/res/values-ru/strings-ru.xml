@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Сергеев Урок2</string>
-    <string name="button_name">Кнопка</string>
+    <string name="english_button_name">Английский язык</string>
+    <string name="russian_button_name">Русский язык</string>
+    <string name="go_to_second_activity_button">Вторая активити</string>
+    <string name="default_text">Значение по умолчанию</string>
+    <string name="hint_et">Введите текст</string>
 </resources>
