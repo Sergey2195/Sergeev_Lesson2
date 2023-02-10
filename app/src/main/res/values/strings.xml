@@ -5,4 +5,6 @@
     <string name="go_to_second_activity_button">Second activity</string>
     <string name="default_text">Default text</string>
     <string name="hint_et">Enter text</string>
+    <string name="save_button_name">Save</string>
+    <string name="save_failure">Save button was not clicked or text was not entered</string>
 </resources>

@@ -6,4 +6,6 @@
     <string name="go_to_second_activity_button">Вторая активити</string>
     <string name="default_text">Значение по умолчанию</string>
     <string name="hint_et">Введите текст</string>
+    <string name="save_button_name">Сохранить</string>
+    <string name="save_failure">Не была нажата кнопка сохранить или не был введен текст</string>
 </resources>

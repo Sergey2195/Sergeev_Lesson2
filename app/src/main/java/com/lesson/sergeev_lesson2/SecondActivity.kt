@@ -1,10 +1,10 @@
 package com.lesson.sergeev_lesson2
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.lesson.sergeev_lesson2.databinding.ActivitySecondBinding
 
 class SecondActivity : AppCompatActivity() {
@@ -15,25 +15,37 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivitySecondBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setupClickListeners()
+    }
+
+    private fun setupClickListeners() {
+        binding.saveBtn.setOnClickListener { sendResult() }
+    }
+
+    private fun sendResult() {
+        val text = binding.editTextSecond.text.toString()
+        val result = Intent().putExtra(STRING_KEY, text)
+        setResult(Activity.RESULT_OK, result)
+        finish()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
-        Log.d("SSV", "onSaveInstanceState")
-        val text = binding.editTextTextPersonName.text.toString()
+        val text = binding.editTextSecond.text.toString()
         outState.putString(EDIT_TEXT_KEY, text)
         super.onSaveInstanceState(outState)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        Log.d("SSV", "onRestoreInstanceState")
         super.onRestoreInstanceState(savedInstanceState)
-        binding.editTextTextPersonName.setText(savedInstanceState.getString(EDIT_TEXT_KEY))
+        binding.editTextSecond.setText(savedInstanceState.getString(EDIT_TEXT_KEY))
     }
 
     companion object {
         fun newInstance(context: Context): Intent = Intent(
             context, SecondActivity::class.java
         )
+
         private const val EDIT_TEXT_KEY = "key"
+        const val STRING_KEY = "String Key"
     }
 }
