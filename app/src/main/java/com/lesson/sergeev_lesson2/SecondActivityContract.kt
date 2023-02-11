@@ -11,12 +11,14 @@ class SecondActivityContract: ActivityResultContract<Unit, String?>() {
     }
 
     override fun parseResult(resultCode: Int, intent: Intent?): String? {
-        return if (resultCode != Activity.RESULT_OK
-            || intent?.getStringExtra(SecondActivity.STRING_KEY) == null
-        ){
-            null
-        }else{
-            intent.getStringExtra(SecondActivity.STRING_KEY)
+        return when (checkValidResult(resultCode, intent)){
+            true -> intent?.getStringExtra(SecondActivity.STRING_KEY)
+            false -> null
         }
+    }
+
+    private fun checkValidResult(resultCode: Int, intent: Intent?): Boolean{
+        return resultCode == Activity.RESULT_OK
+                && intent?.getStringExtra(SecondActivity.STRING_KEY) != null
     }
 }

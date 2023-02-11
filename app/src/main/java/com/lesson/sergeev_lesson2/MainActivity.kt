@@ -42,9 +42,7 @@ class MainActivity : AppCompatActivity() {
     private fun setupClickListeners() {
         binding.changeToRuButton.setOnClickListener { changeLocale(RU_LANG) }
         binding.changeToEnglishButton.setOnClickListener { changeLocale(EN_LANG) }
-        binding.goToSecondActivityBtn.setOnClickListener {
-            activityLauncher.launch(Unit)
-        }
+        binding.goToSecondActivityBtn.setOnClickListener { activityLauncher.launch(Unit) }
     }
 
     private fun changeLocale(localeLang: String) {

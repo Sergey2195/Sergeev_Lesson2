@@ -19,16 +19,15 @@ class SecondActivity : AppCompatActivity() {
     }
 
     private fun setupClickListeners() {
-        binding.saveBtn.setOnClickListener { sendResult() }
+        binding.saveBtn.setOnClickListener { sendResultAndFinish() }
     }
 
-    private fun sendResult() {
+    private fun sendResultAndFinish() {
         val text = binding.editTextSecond.text.toString()
         val result = Intent().putExtra(STRING_KEY, text)
-        if (text.isBlank()){
-            setResult(Activity.RESULT_CANCELED, result)
-        }else{
-            setResult(Activity.RESULT_OK, result)
+        when (text.isBlank()) {
+            true -> setResult(Activity.RESULT_CANCELED, result)
+            false -> setResult(Activity.RESULT_OK, result)
         }
         finish()
     }
