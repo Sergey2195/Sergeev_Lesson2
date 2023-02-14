@@ -13,4 +13,12 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="imageViewFlags">
+        <item name="android:layout_width">64dp</item>
+        <item name="android:layout_height">48dp</item>
+    </style>
+    <style name="frameLayoutStyle">
+        <item name="android:layout_marginStart">32dp</item>
+        <item name="android:layout_marginEnd">32dp</item>
+    </style>
 </resources>

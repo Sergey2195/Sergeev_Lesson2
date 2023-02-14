@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/austria_flag_icon" />
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/poland_flag_icon" />
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/italy_flag_icon" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/colombia_flag_icon" />
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/madagascar_flag_icon" />
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/thailand_flag_icon" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/denmark_flag_icon" />
+
+        <ImageView
+            style="@style/imageViewFlags"
+            android:layout_weight="1"
+            android:src="@drawable/switzerland_flag_icon" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
