@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sergeev_Lesson2</string>
+    <string name="action_bar_title">Aston intensive</string>
+    <string name="header_image">Изображение заголовка</string>
+    <string name="title_text">ИТ-решения для\nразвития бизнеса</string>
+    <string name="sub_title_text">Разработка программного\nобеспечения</string>
+    <string name="about_us_title">О нас:</string>
+    <string name="about_us_content">Aston — компания по разработке ПО с полным циклом услуг. Уже 15 лет мы помогаем заказчикам по всему миру трансформировать бизнес, создавая эффективные мобильные и десктопные решения</string>
+    <string name="offices_title">Офисы</string>
+    <string name="moscow">Москва</string>
+    <string name="kazan">Казань</string>
+    <string name="rostov_Na_Donu">Ростов-на-Дону</string>
+    <string name="minsk">Минск</string>
+    <string name="gomel">Гомель</string>
+    <string name="contacts_btn_title">Контакты</string>
+    <string name="vacancies">Вакансии</string>
+    <string name="gallery">Галерея</string>
+</resources>
