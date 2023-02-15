@@ -63,6 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/sub_title_text"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/logoImageView"
         app:layout_constraintStart_toStartOf="@id/titleTextView"
         app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
@@ -150,7 +151,8 @@
         app:flow_wrapMode="chain"
         app:layout_constraintEnd_toStartOf="@id/endSpace"
         app:layout_constraintStart_toEndOf="@id/startSpace"
-        app:layout_constraintTop_toBottomOf="@id/officesTitle" />
+        app:layout_constraintTop_toBottomOf="@id/officesTitle"
+        android:layout_marginTop="4dp"/>
 
     <Button
         android:id="@+id/contactsBtn"
@@ -161,7 +163,8 @@
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@id/startSpace"
         app:layout_constraintTop_toBottomOf="@id/flowChips"
-        android:layout_marginEnd="4dp"/>
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"/>
 
     <Button
         android:id="@+id/vacanciesBtn"
