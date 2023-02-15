@@ -16,4 +16,5 @@
     <string name="contacts_btn_title">Контакты</string>
     <string name="vacancies">Вакансии</string>
     <string name="gallery">Галерея</string>
+    <string name="greeting">Приветствуем вас в Aston</string>
 </resources>

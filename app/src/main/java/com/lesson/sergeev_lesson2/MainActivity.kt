@@ -1,10 +1,9 @@
 package com.lesson.sergeev_lesson2
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,12 +17,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupClickListeners() {
-        binding.bottomButtonsGroup.referencedIds.forEach { view->
-            findViewById<Button>(view).setOnClickListener{setProgressState()}
+        binding.bottomButtonsGroup.referencedIds?.forEach { view ->
+            findViewById<Button>(view).setOnClickListener { setProgressState() }
         }
     }
 
-    private fun setProgressState(){
+    private fun setProgressState() {
         binding.progressGroup.visibility = View.GONE
         binding.progressBar.visibility = View.VISIBLE
     }
