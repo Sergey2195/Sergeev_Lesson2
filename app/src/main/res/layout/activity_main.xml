@@ -181,4 +181,25 @@
         app:layout_constraintEnd_toStartOf="@id/endSpace"
         app:layout_constraintStart_toEndOf="@id/vacanciesBtn"
         app:layout_constraintTop_toTopOf="@id/contactsBtn" />
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomButtonsGroup"
+        app:constraint_referenced_ids="contactsBtn, vacanciesBtn, galleryBtn"/>
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progress_group"
+        app:constraint_referenced_ids="bottomButtonsGroup, officesTitle, flowChips"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:visibility="invisible"
+        android:indeterminateTint="@color/aston_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aboutUsContent"
+        app:layout_constraintBottom_toBottomOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
