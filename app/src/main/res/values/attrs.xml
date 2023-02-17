@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="WatchView">
+        <attr name="hour_color" format="color"/>
+        <attr name="minutes_color" format="color"/>
+        <attr name="seconds_color" format="color"/>
+        <attr name="hour_width" format="float"/>
+        <attr name="minutes_width" format="float"/>
+        <attr name="seconds_width" format="float"/>
+        <attr name="hour_ratio" format="float"/>
+        <attr name="minutes_ratio" format="float"/>
+        <attr name="seconds_ratio" format="float"/>
+    </declare-styleable>
+</resources>
