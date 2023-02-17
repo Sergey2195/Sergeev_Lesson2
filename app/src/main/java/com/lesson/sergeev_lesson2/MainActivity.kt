@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val time = WatchTime(0,0,0)
-        var i = 0
         thread{
             while (true){
                 val currTime = Calendar.getInstance()
@@ -23,17 +22,7 @@ class MainActivity : AppCompatActivity() {
                 val seconds = currTime.get(Calendar.SECOND)
                 time.setTime(hour, minutes, seconds)
                 binding.watchView.setNewTime(time)
-                if (i ==3){
-                    runOnUiThread{
-                        with(binding.watchView){
-                            updateHoursRatio(1f)
-                            updateMinutesRatio(1.2f)
-                            updateSecondsRatio(1.4f)
-                        }
-                    }
-                }
                 Thread.sleep(1000)
-                i++
             }
         }
     }

@@ -1,13 +1,11 @@
 package com.lesson.sergeev_lesson2
 
 import android.content.Context
-import android.graphics.Canvas
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.PointF
+import android.graphics.*
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
+import androidx.core.graphics.alpha
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.properties.Delegates
@@ -41,6 +39,15 @@ class WatchView(
     private lateinit var hoursPaint: Paint
     private lateinit var minutesPaint: Paint
     private lateinit var secondsPaint: Paint
+
+
+
+
+    private var shadowPaint: Paint
+    private lateinit var shader: LinearGradient
+    private var customBlack = Color.rgb(105,105,105)
+
+
     private var center: PointF = PointF(0f, 0f)
     private var radius: Float = 0f
     private var hourColor by Delegates.notNull<Int>()
@@ -53,9 +60,11 @@ class WatchView(
     private var minutesRatio by Delegates.notNull<Float>()
     private var secondsRatio by Delegates.notNull<Float>()
 
+
     init {
         parsingAttrs(attrSet, defStyleAttr, defStyleRes)
         initPaints()
+        shadowPaint = Paint()
     }
 
     private fun parsingAttrs(attrSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
@@ -77,7 +86,13 @@ class WatchView(
         initCirclePaint()
         initNotchesPaint()
         initArrowsPaint()
+        initShadow()
     }
+
+    private fun initShadow() {
+        shadowPaint = Paint()
+    }
+
     private fun initArrowsPaint() {
         hoursPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         hoursPaint.style = Paint.Style.STROKE
@@ -134,11 +149,15 @@ class WatchView(
         invalidate()
     }
 
-    override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
-        super.onLayout(changed, left, top, right, bottom)
+    override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
+        super.onSizeChanged(w, h, oldw, oldh)
         updateCenterAndRadius()
         updateExternalNotchesArray()
         updateInternalNotchesArray()
+        shader = LinearGradient(
+            width.toFloat()/2, height.toFloat(), width.toFloat()/2, height*0.5f, customBlack, Color.WHITE, Shader.TileMode.CLAMP
+        )
+        shadowPaint.shader = shader
     }
 
     private fun updateInternalNotchesArray() {
@@ -189,6 +208,7 @@ class WatchView(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
+        canvas.drawRect(0f, height.toFloat()/2, width.toFloat(), height.toFloat(), shadowPaint)
         drawCircle(canvas)
         drawArrows(canvas)
     }
