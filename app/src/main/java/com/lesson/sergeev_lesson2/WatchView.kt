@@ -5,7 +5,6 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.View
-import androidx.core.graphics.alpha
 import kotlin.math.cos
 import kotlin.math.sin
 import kotlin.properties.Delegates
@@ -28,7 +27,13 @@ class WatchView(
         defStyleAttr,
         R.style.WatchViewDefaultStyle
     )
-    constructor(context: Context, attrSet: AttributeSet?) : this(context, attrSet,R.style.WatchViewDefaultStyle)
+
+    constructor(context: Context, attrSet: AttributeSet?) : this(
+        context,
+        attrSet,
+        R.style.WatchViewDefaultStyle
+    )
+
     constructor(context: Context) : this(context, null)
 
     private var currentTime = WatchTime(0, 0, 0)
@@ -39,15 +44,9 @@ class WatchView(
     private lateinit var hoursPaint: Paint
     private lateinit var minutesPaint: Paint
     private lateinit var secondsPaint: Paint
-
-
-
-
     private var shadowPaint: Paint
     private lateinit var shader: LinearGradient
-    private var customBlack = Color.rgb(105,105,105)
-
-
+    private var customBlack = Color.rgb(128, 128, 128)
     private var center: PointF = PointF(0f, 0f)
     private var radius: Float = 0f
     private var hourColor by Delegates.notNull<Int>()
@@ -60,7 +59,6 @@ class WatchView(
     private var minutesRatio by Delegates.notNull<Float>()
     private var secondsRatio by Delegates.notNull<Float>()
 
-
     init {
         parsingAttrs(attrSet, defStyleAttr, defStyleRes)
         initPaints()
@@ -69,7 +67,12 @@ class WatchView(
 
     private fun parsingAttrs(attrSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
         if (attrSet == null) return
-        val typedArray = context.obtainStyledAttributes(attrSet, R.styleable.WatchView,defStyleAttr, defStyleRes)
+        val typedArray = context.obtainStyledAttributes(
+            attrSet,
+            R.styleable.WatchView,
+            defStyleAttr,
+            defStyleRes
+        )
         hourColor = typedArray.getColor(R.styleable.WatchView_hour_color, Color.BLACK)
         minutesColor = typedArray.getColor(R.styleable.WatchView_minutes_color, Color.BLACK)
         secondsColor = typedArray.getColor(R.styleable.WatchView_seconds_color, Color.BLACK)
@@ -155,7 +158,13 @@ class WatchView(
         updateExternalNotchesArray()
         updateInternalNotchesArray()
         shader = LinearGradient(
-            width.toFloat()/2, height.toFloat(), width.toFloat()/2, height*0.5f, customBlack, Color.WHITE, Shader.TileMode.CLAMP
+            width.toFloat() / 2,
+            height.toFloat(),
+            width.toFloat() / 2,
+            height * 0.4f,
+            customBlack,
+            Color.WHITE,
+            Shader.TileMode.CLAMP
         )
         shadowPaint.shader = shader
     }
@@ -208,7 +217,7 @@ class WatchView(
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        canvas.drawRect(0f, height.toFloat()/2, width.toFloat(), height.toFloat(), shadowPaint)
+        canvas.drawRect(0f, height.toFloat() * 0.4f, width.toFloat(), height.toFloat(), shadowPaint)
         drawCircle(canvas)
         drawArrows(canvas)
     }
@@ -250,27 +259,27 @@ class WatchView(
         }
     }
 
-    fun updateHourColor(color: Int){
+    fun updateHourColor(color: Int) {
         hoursPaint.color = color
     }
 
-    fun updateMinutesColor(color: Int){
+    fun updateMinutesColor(color: Int) {
         minutesPaint.color = color
     }
 
-    fun updateSecondsColor(color: Int){
+    fun updateSecondsColor(color: Int) {
         secondsPaint.color = color
     }
 
-    fun updateHoursWidth(width: Float){
+    fun updateHoursWidth(width: Float) {
         hoursPaint.strokeWidth = updateWidth(width)
     }
 
-    fun updateMinutesWidth(width: Float){
+    fun updateMinutesWidth(width: Float) {
         minutesPaint.strokeWidth = updateWidth(width)
     }
 
-    fun updateSecondsWidth(width: Float){
+    fun updateSecondsWidth(width: Float) {
         secondsPaint.strokeWidth = updateWidth(width)
     }
 
@@ -282,15 +291,15 @@ class WatchView(
         )
     }
 
-    fun updateHoursRatio(ratio: Float){
+    fun updateHoursRatio(ratio: Float) {
         hoursRatio = ratio
     }
 
-    fun updateMinutesRatio(ratio: Float){
+    fun updateMinutesRatio(ratio: Float) {
         minutesRatio = ratio
     }
 
-    fun updateSecondsRatio(ratio: Float){
+    fun updateSecondsRatio(ratio: Float) {
         secondsRatio = ratio
     }
 }
