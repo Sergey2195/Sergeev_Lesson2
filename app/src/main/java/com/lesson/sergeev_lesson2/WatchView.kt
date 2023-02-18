@@ -44,7 +44,7 @@ class WatchView(
     private lateinit var hoursPaint: Paint
     private lateinit var minutesPaint: Paint
     private lateinit var secondsPaint: Paint
-    private var shadowPaint: Paint
+    private lateinit var shadowPaint: Paint
     private lateinit var shader: LinearGradient
     private var customBlack = Color.rgb(128, 128, 128)
     private var center: PointF = PointF(0f, 0f)
@@ -62,7 +62,6 @@ class WatchView(
     init {
         parsingAttrs(attrSet, defStyleAttr, defStyleRes)
         initPaints()
-        shadowPaint = Paint()
     }
 
     private fun parsingAttrs(attrSet: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) {
