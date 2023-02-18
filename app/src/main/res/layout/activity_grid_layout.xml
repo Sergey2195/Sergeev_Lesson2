@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_rowWeight="3"
+    android:layout_columnWeight="3"
+    android:layout_gravity="center"
+    android:background="@color/grey">
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/austria_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/poland_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="0"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/italy_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/colombia_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="1"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/madagascar_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="1"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/thailand_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="2"
+        android:layout_rowWeight="1"
+        android:layout_column="0"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/denmark_flag_icon" />
+
+    <ImageView
+        style="@style/imageViewFlags"
+        android:layout_row="2"
+        android:layout_rowWeight="1"
+        android:layout_column="2"
+        android:layout_columnWeight="1"
+        android:layout_gravity="center"
+        android:src="@drawable/switzerland_flag_icon" />
+
+</GridLayout>
