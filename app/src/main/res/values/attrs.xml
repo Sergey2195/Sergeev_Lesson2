@@ -4,5 +4,7 @@
         <attr name="title_text" format="string"/>
         <attr name="subtitle_text" format="string"/>
         <attr name="logo_image_res" format="reference"/>
+        <attr name="logo_image_width" format="dimension"/>
+        <attr name="logo_image_height" format="dimension"/>
     </declare-styleable>
 </resources>
