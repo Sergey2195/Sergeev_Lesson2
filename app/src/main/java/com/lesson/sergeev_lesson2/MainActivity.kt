@@ -17,14 +17,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupClickListeners() {
-        binding.bottomButtonsGroup.referencedIds?.forEach { view ->
+        binding.bottomButtonsGroup?.referencedIds?.forEach { view ->
             findViewById<Button>(view).setOnClickListener { setProgressState() }
         }
     }
 
     private fun setProgressState() {
-        binding.progressGroup.visibility = View.GONE
-        binding.progressBar.visibility = View.VISIBLE
+        binding.progressGroup?.visibility = View.GONE
+        binding.progressBar?.visibility = View.VISIBLE
     }
 
     private fun setupViews() {
