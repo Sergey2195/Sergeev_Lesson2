@@ -22,4 +22,6 @@
     <string name="home_title_bnb">Главная</string>
     <string name="vacancies_title_bnb">Вакансии</string>
     <string name="offices_title_bnb">Офисы</string>
+    <string name="hint_login">Имя</string>
+    <string name="hint_password">Пароль</string>
 </resources>

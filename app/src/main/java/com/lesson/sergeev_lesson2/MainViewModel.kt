@@ -21,4 +21,8 @@ class MainViewModel: ViewModel() {
     fun openMainScreen(){
         router?.openMainScreen()
     }
+
+    fun openLoginScreen(){
+        router?.openLoginScreen()
+    }
 }

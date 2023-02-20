@@ -21,4 +21,6 @@
     <string name="home_title_bnb">Home</string>
     <string name="vacancies_title_bnb">Vacancies</string>
     <string name="offices_title_bnb">Offices</string>
+    <string name="hint_login">Login</string>
+    <string name="hint_password">Password</string>
 </resources>

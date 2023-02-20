@@ -13,6 +13,10 @@ class Router {
         openFragment(MainFragment.newInstance(), false)
     }
 
+    fun openLoginScreen(){
+        openFragment(LoginFragment.newInstance(), false)
+    }
+
     private fun openFragment(fragment: Fragment, addToBackStack: Boolean){
         val transaction = mainActivity?.supportFragmentManager?.beginTransaction()
         transaction?.replace(R.id.mainFragmentContainerView, fragment)
