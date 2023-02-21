@@ -30,21 +30,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerImageView" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/firstBarrier"
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        app:constraint_referenced_ids="headerImageView"
-        app:layout_constraintTop_toBottomOf="@+id/headerImageView" />
-
     <com.lesson.sergeev_lesson2.cardCustomView.AstonCardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:id="@+id/astonCardView"
         android:layout_marginHorizontal="4dp"
         app:layout_constraintTop_toBottomOf="@+id/headerImageView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/startSpace"
+        app:layout_constraintEnd_toStartOf="@id/endSpace"/>
 
     <TextView
         android:id="@+id/aboutUsTitle"
@@ -65,118 +58,118 @@
         app:layout_constraintStart_toEndOf="@+id/startSpace"
         app:layout_constraintTop_toBottomOf="@+id/aboutUsTitle" />
 
-    <TextView
-        android:id="@+id/officesTitle"
-        style="@style/TitleStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/offices_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutUsContent" />
+<!--    <TextView-->
+<!--        android:id="@+id/officesTitle"-->
+<!--        style="@style/TitleStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/offices_title"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/aboutUsContent" />-->
 
-    <TextView
-        android:id="@+id/MoscowTV"
-        style="@style/ChipsStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/moscow" />
+<!--    <TextView-->
+<!--        android:id="@+id/MoscowTV"-->
+<!--        style="@style/ChipsStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/moscow" />-->
 
-    <TextView
-        android:id="@+id/KazanTV"
-        style="@style/ChipsStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/kazan" />
+<!--    <TextView-->
+<!--        android:id="@+id/KazanTV"-->
+<!--        style="@style/ChipsStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/kazan" />-->
 
-    <TextView
-        android:id="@+id/RostovOnDonTV"
-        style="@style/ChipsStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/rostov_Na_Donu" />
+<!--    <TextView-->
+<!--        android:id="@+id/RostovOnDonTV"-->
+<!--        style="@style/ChipsStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/rostov_Na_Donu" />-->
 
-    <TextView
-        android:id="@+id/MinskTV"
-        style="@style/ChipsStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/minsk" />
+<!--    <TextView-->
+<!--        android:id="@+id/MinskTV"-->
+<!--        style="@style/ChipsStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/minsk" />-->
 
-    <TextView
-        android:id="@+id/GomelTV"
-        style="@style/ChipsStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/gomel" />
+<!--    <TextView-->
+<!--        android:id="@+id/GomelTV"-->
+<!--        style="@style/ChipsStyle"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/gomel" />-->
 
-    <androidx.constraintlayout.helper.widget.Flow
-        android:id="@+id/flowChips"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        app:constraint_referenced_ids="MoscowTV,KazanTV,RostovOnDonTV,MinskTV,GomelTV"
-        app:flow_horizontalBias="0"
-        app:flow_horizontalGap="10dp"
-        app:flow_horizontalStyle="packed"
-        app:flow_verticalGap="4dp"
-        app:flow_wrapMode="chain"
-        app:layout_constraintEnd_toStartOf="@id/endSpace"
-        app:layout_constraintStart_toEndOf="@id/startSpace"
-        app:layout_constraintTop_toBottomOf="@id/officesTitle" />
+<!--    <androidx.constraintlayout.helper.widget.Flow-->
+<!--        android:id="@+id/flowChips"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        app:constraint_referenced_ids="MoscowTV,KazanTV,RostovOnDonTV,MinskTV,GomelTV"-->
+<!--        app:flow_horizontalBias="0"-->
+<!--        app:flow_horizontalGap="10dp"-->
+<!--        app:flow_horizontalStyle="packed"-->
+<!--        app:flow_verticalGap="4dp"-->
+<!--        app:flow_wrapMode="chain"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/endSpace"-->
+<!--        app:layout_constraintStart_toEndOf="@id/startSpace"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/officesTitle" />-->
 
-    <Button
-        android:id="@+id/contactsBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:text="@string/contacts_btn_title"
-        app:layout_constraintEnd_toStartOf="@+id/vacanciesBtn"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toEndOf="@id/startSpace"
-        app:layout_constraintTop_toBottomOf="@id/flowChips" />
+<!--    <Button-->
+<!--        android:id="@+id/contactsBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="4dp"-->
+<!--        android:layout_marginEnd="4dp"-->
+<!--        android:text="@string/contacts_btn_title"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/vacanciesBtn"-->
+<!--        app:layout_constraintHorizontal_chainStyle="packed"-->
+<!--        app:layout_constraintStart_toEndOf="@id/startSpace"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/flowChips" />-->
 
-    <Button
-        android:id="@+id/vacanciesBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/vacancies"
-        app:layout_constraintEnd_toStartOf="@+id/galleryBtn"
-        app:layout_constraintStart_toEndOf="@id/contactsBtn"
-        app:layout_constraintTop_toTopOf="@id/contactsBtn" />
+<!--    <Button-->
+<!--        android:id="@+id/vacanciesBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/vacancies"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/galleryBtn"-->
+<!--        app:layout_constraintStart_toEndOf="@id/contactsBtn"-->
+<!--        app:layout_constraintTop_toTopOf="@id/contactsBtn" />-->
 
-    <Button
-        android:id="@+id/galleryBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="@string/gallery"
-        app:layout_constraintEnd_toStartOf="@id/endSpace"
-        app:layout_constraintStart_toEndOf="@id/vacanciesBtn"
-        app:layout_constraintTop_toTopOf="@id/contactsBtn" />
+<!--    <Button-->
+<!--        android:id="@+id/galleryBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="4dp"-->
+<!--        android:text="@string/gallery"-->
+<!--        app:layout_constraintEnd_toStartOf="@id/endSpace"-->
+<!--        app:layout_constraintStart_toEndOf="@id/vacanciesBtn"-->
+<!--        app:layout_constraintTop_toTopOf="@id/contactsBtn" />-->
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/bottomButtonsGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="contactsBtn, vacanciesBtn, galleryBtn" />
+<!--    <androidx.constraintlayout.widget.Group-->
+<!--        android:id="@+id/bottomButtonsGroup"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:constraint_referenced_ids="contactsBtn, vacanciesBtn, galleryBtn" />-->
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/progress_group"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:constraint_referenced_ids="bottomButtonsGroup,officesTitle,flowChips" />
+<!--    <androidx.constraintlayout.widget.Group-->
+<!--        android:id="@+id/progress_group"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:constraint_referenced_ids="bottomButtonsGroup,officesTitle,flowChips" />-->
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:indeterminateTint="@color/aston_color"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/aboutUsContent" />
+<!--    <ProgressBar-->
+<!--        android:id="@+id/progressBar"-->
+<!--        style="?android:attr/progressBarStyle"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:indeterminateTint="@color/aston_color"-->
+<!--        android:visibility="invisible"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/aboutUsContent" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

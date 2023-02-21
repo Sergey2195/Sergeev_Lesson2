@@ -1,11 +1,24 @@
 package com.lesson.sergeev_lesson2.activity
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import android.view.inputmethod.InputMethodManager
+import android.window.OnBackInvokedDispatcher
+import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.BuildCompat
 import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.navigation.NavigationBarView
+import com.lesson.sergeev_lesson2.R
 import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -15,40 +28,73 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel.attachRouter(this)
-        if (savedInstanceState == null){
-            startLoginScreen()
+        if (savedInstanceState == null) {
+            viewModel.openOfficesScreen()
         }
-//        setupViews()
-//        setupClickListeners()
+        setBottomNavigationBarClickListeners()
+//        onBackPressedHandling()
     }
+
+    private fun setBottomNavigationBarClickListeners() {
+        binding.bottomNavigation.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.mainScreenBottomBtn -> {
+                    onBackPressedDispatcher.onBackPressed()
+                    true
+                }
+                R.id.vacancyBottomBtn -> {
+                    viewModel.openVacanciesScreen()
+                    true
+                }
+                R.id.officesBottomBtn -> {
+                    Log.d("ssv", "offices")
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
+    }
+
+//    private fun onBackPressedHandling() {
+//        onBackPressedDispatcher.addCallback(this) {
+//            if (binding.bottomNavigation.selectedItemId == R.id.mainScreenBottomBtn){
+//                hideApp()
+//            }else{
+//                goToMainFragment()
+//            }
+//        }
+//    }
+
+//    private fun goToMainFragment(){
+//        val fragment = supportFragmentManager.findFragmentByTag(MAIN_SCREEN_NAME) ?: return
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.mainFragmentContainerView, fragment)
+//            .commit()
+//    }
+
+//    private fun hideApp(){
+//        moveTaskToBack(true)
+//    }
+
     override fun onDestroy() {
         viewModel.detachRouter()
         super.onDestroy()
     }
 
-    private fun startLoginScreen(){
+    private fun startLoginScreen() {
         viewModel.openLoginScreen()
         binding.bottomNavigation.isVisible = false
     }
 
-    fun startMainScreen(){
+    fun startMainScreen() = lifecycleScope.launch {
+        delay(500)
         viewModel.openMainScreen()
         binding.bottomNavigation.isVisible = true
     }
 
-    //
-//    private fun setupClickListeners() {
-//        binding.bottomButtonsGroup?.referencedIds?.forEach { view ->
-//            findViewById<Button>(view).setOnClickListener { setProgressState() }
-//        }
-//    }
-//
-//    private fun setProgressState() {
-//        binding.progressGroup?.visibility = View.GONE
-//        binding.progressBar?.visibility = View.VISIBLE
-//    }
-//
-//    private fun setupViews() {
-//        supportActionBar?.title = getString(R.string.action_bar_title)
-//    }
+    companion object{
+        const val MAIN_SCREEN_NAME = "main screen"
+    }
 }

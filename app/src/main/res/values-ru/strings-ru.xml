@@ -27,4 +27,12 @@
     <string name="login_title_enter">Вход</string>
     <string name="login_btn_title">Войти</string>
     <string name="password_error_text">Неправильный пароль</string>
+    <string name="flutter_title">Flutter Developer</string>
+    <string name="flutter_descr">Опыт работы с Flutter/Dart от 3-х лет</string>
+    <string name="fullstack_title">Full-Stack Developer</string>
+    <string name="fullstack_descr">Уверенное владение React, Java</string>
+    <string name="android_title">Android Developer</string>
+    <string name="android_descr">Опыт коммерческой разработки под Android от 3-х лет;</string>
+    <string name="ios_title">IOS Developer</string>
+    <string name="ios_descr">Опыт разработки под платформу iOS от 3-х лет;</string>
 </resources>

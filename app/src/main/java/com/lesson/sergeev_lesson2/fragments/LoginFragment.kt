@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
     private fun addListeners() {
         binding.loginBtn.setOnClickListener {
             val inputText = binding.passwordEditText.text.toString()
-            if (loginViewModel.checkPassword(inputText)){
+            if (loginViewModel.checkPassword(inputText)) {
                 startMainScreen()
             }
         }
@@ -51,11 +51,10 @@ class LoginFragment : Fragment() {
         changeVisibilityIconListener()
     }
 
-    private fun startMainScreen(){
+    private fun startMainScreen() {
         lifecycleScope.launch {
-            binding.groupViews?.isVisible = false
-            binding.progressBar?.isVisible = true
-            delay(2000)
+            binding.groupViews.isVisible = false
+            binding.progressBar.isVisible = true
             (requireActivity() as MainActivity).startMainScreen()
         }
     }

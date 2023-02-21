@@ -27,4 +27,12 @@ class MainViewModel: ViewModel() {
     fun openLoginScreen(){
         router?.openLoginScreen()
     }
+
+    fun openVacanciesScreen(){
+        router?.openVacanciesScreen()
+    }
+
+    fun openOfficesScreen(){
+        router?.openOfficesScreen()
+    }
 }
