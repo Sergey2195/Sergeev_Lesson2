@@ -23,4 +23,7 @@
     <string name="offices_title_bnb">Offices</string>
     <string name="hint_login">Login</string>
     <string name="hint_password">Password</string>
+    <string name="login_title_enter">Enter</string>
+    <string name="login_btn_title">Enter</string>
+    <string name="password_error_text">Wrong password</string>
 </resources>

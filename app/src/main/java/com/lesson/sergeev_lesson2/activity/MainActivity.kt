@@ -1,8 +1,10 @@
-package com.lesson.sergeev_lesson2
+package com.lesson.sergeev_lesson2.activity
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
+import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -13,14 +15,25 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         viewModel.attachRouter(this)
-        viewModel.openLoginScreen()
+        if (savedInstanceState == null){
+            startLoginScreen()
+        }
 //        setupViews()
 //        setupClickListeners()
     }
-
     override fun onDestroy() {
         viewModel.detachRouter()
         super.onDestroy()
+    }
+
+    private fun startLoginScreen(){
+        viewModel.openLoginScreen()
+        binding.bottomNavigation.isVisible = false
+    }
+
+    fun startMainScreen(){
+        viewModel.openMainScreen()
+        binding.bottomNavigation.isVisible = true
     }
 
     //

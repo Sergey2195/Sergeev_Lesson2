@@ -11,18 +11,19 @@
         style="@style/SubtitleStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="@string/login_title_enter"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/loginEditText"
+        app:layout_constraintVertical_chainStyle="spread"/>
 
     <EditText
         android:id="@+id/loginEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="12dp"
         android:autofillHints="false"
         android:background="@drawable/edit_text_background"
         android:inputType="text"
@@ -31,7 +32,8 @@
         android:paddingEnd="50dp"
         app:layout_constraintEnd_toStartOf="@id/endSpaceL"
         app:layout_constraintStart_toEndOf="@+id/startSpaceL"
-        app:layout_constraintTop_toBottomOf="@id/enterLoginTitle" />
+        app:layout_constraintTop_toBottomOf="@id/enterLoginTitle"
+        app:layout_constraintBottom_toTopOf="@+id/passwordEditText"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -59,7 +61,8 @@
         android:paddingEnd="50dp"
         app:layout_constraintEnd_toStartOf="@id/endSpaceL"
         app:layout_constraintStart_toEndOf="@+id/startSpaceL"
-        app:layout_constraintTop_toBottomOf="@+id/loginEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/loginEditText"
+        app:layout_constraintBottom_toTopOf="@id/loginBtn"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -68,30 +71,23 @@
         android:layout_marginBottom="52dp"
         android:background="@color/white"
         android:padding="4dp"
-        android:text="@string/hint_password"
         android:id="@+id/passwordTitle"
+        android:text="@string/hint_password"
         app:layout_constraintBottom_toBottomOf="@id/passwordEditText"
         app:layout_constraintStart_toStartOf="@id/passwordEditText"
         app:layout_constraintTop_toTopOf="@id/passwordEditText" />
 
     <Space
         android:id="@+id/startSpaceL"
-        android:layout_width="16dp"
+        android:layout_width="64dp"
         android:layout_height="match_parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Space
         android:id="@+id/endSpaceL"
-        android:layout_width="16dp"
+        android:layout_width="64dp"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/centerVerticalGuideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
 
     <Button
         android:layout_width="0dp"
@@ -103,7 +99,8 @@
         android:id="@+id/loginBtn"
         app:layout_constraintEnd_toStartOf="@id/endSpaceL"
         app:layout_constraintStart_toEndOf="@id/startSpaceL"
-        app:layout_constraintTop_toTopOf="@id/centerVerticalGuideline" />
+        app:layout_constraintTop_toBottomOf="@id/passwordEditText"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
         android:id="@+id/visibilityImageView"

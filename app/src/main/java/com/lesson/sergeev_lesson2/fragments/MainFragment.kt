@@ -1,4 +1,4 @@
-package com.lesson.sergeev_lesson2
+package com.lesson.sergeev_lesson2.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater

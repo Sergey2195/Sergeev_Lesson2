@@ -1,4 +1,4 @@
-package com.lesson.sergeev_lesson2
+package com.lesson.sergeev_lesson2.cardCustomView
 
 import android.graphics.drawable.Drawable
 
