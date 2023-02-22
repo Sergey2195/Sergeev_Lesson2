@@ -35,6 +35,12 @@ class OfficeDetailsFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.officeName.text = officeName
+        binding.officeDescription.text = officeDescription
+    }
+
     companion object {
 
         fun newInstance(officeName: String, officeDescription: String) =
