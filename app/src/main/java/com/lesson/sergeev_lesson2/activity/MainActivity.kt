@@ -20,6 +20,7 @@ import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
 import com.lesson.sergeev_lesson2.fragments.OfficesFragment
 import com.lesson.sergeev_lesson2.fragments.VacanciesFragment
+import com.lesson.sergeev_lesson2.router.Router
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             startLoginScreen()
         }else{
-            if (supportFragmentManager.findFragmentByTag("loginScreen") != null) {
+            if (supportFragmentManager.findFragmentByTag(Router.LOGIN_SCREEN_TAG) != null) {
                 binding.bottomNavigation.visibility = View.GONE
             }
         }
