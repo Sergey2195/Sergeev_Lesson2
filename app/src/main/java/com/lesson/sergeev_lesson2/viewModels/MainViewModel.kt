@@ -32,6 +32,10 @@ class MainViewModel: ViewModel() {
         router?.openVacanciesScreen()
     }
 
+    fun openDetailsScreen(officeName: String){
+        router?.openDetailsScreen(officeName, "example")
+    }
+
     fun openOfficesScreen(){
         router?.openOfficesScreen()
     }

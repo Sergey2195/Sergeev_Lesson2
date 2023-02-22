@@ -35,4 +35,8 @@
     <string name="android_descr">Опыт коммерческой разработки под Android от 3-х лет;</string>
     <string name="ios_title">IOS Developer</string>
     <string name="ios_descr">Опыт разработки под платформу iOS от 3-х лет;</string>
+    <string name="toolbar_login_title">Экран входа</string>
+    <string name="toolbar_main_title">Главная страница</string>
+    <string name="toolbar_vacancies_title">Вакансии</string>
+    <string name="toolbar_offices_title">Офисы</string>
 </resources>

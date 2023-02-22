@@ -1,26 +1,17 @@
 package com.lesson.sergeev_lesson2.activity
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
+import android.view.MenuItem
 import android.view.View
-import android.view.inputmethod.InputMethodManager
-import android.window.OnBackInvokedDispatcher
 import androidx.activity.addCallback
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.os.BuildCompat
 import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationBarView
 import com.lesson.sergeev_lesson2.R
-import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
-import com.lesson.sergeev_lesson2.fragments.OfficesFragment
-import com.lesson.sergeev_lesson2.fragments.VacanciesFragment
 import com.lesson.sergeev_lesson2.router.Router
+import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -34,9 +25,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.attachRouter(this)
         if (savedInstanceState == null) {
             startLoginScreen()
-        }else{
+        } else {
             if (supportFragmentManager.findFragmentByTag(Router.LOGIN_SCREEN_TAG) != null) {
-                binding.bottomNavigation.visibility = View.GONE
+                setupLoginScreen()
             }
         }
         setBottomNavigationBarClickListeners()
@@ -67,28 +58,65 @@ class MainActivity : AppCompatActivity() {
 
     private fun openMainScreen() {
         if (binding.bottomNavigation.selectedItemId == R.id.mainScreenBottomBtn) return
+        setupActionBar(getString(R.string.toolbar_main_title), false)
         viewModel.openMainScreen()
     }
 
 
     private fun openVacanciesScreen() {
         if (binding.bottomNavigation.selectedItemId == R.id.vacancyBottomBtn) return
+        setupActionBar(getString(R.string.toolbar_vacancies_title), false)
         viewModel.openVacanciesScreen()
     }
 
     private fun openOfficesScreen() {
         if (binding.bottomNavigation.selectedItemId == R.id.officesBottomBtn) return
+        setupActionBar(getString(R.string.toolbar_offices_title), false)
         viewModel.openOfficesScreen()
+    }
+
+    fun openOfficeDetails(officeName: String) {
+        viewModel.openDetailsScreen(officeName)
+        setupActionBar(officeName, true)
+    }
+
+    private fun setupActionBar(title: String, backButtonVisible: Boolean){
+        supportActionBar?.setDisplayHomeAsUpEnabled(backButtonVisible)
+        supportActionBar?.title = title
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                onBackPressedDispatcher.onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 
     private fun onBackPressedHandling() {
         onBackPressedDispatcher.addCallback(this) {
-            if (binding.bottomNavigation.selectedItemId == R.id.mainScreenBottomBtn) {
-                hideApp()
-            } else {
-                binding.bottomNavigation.selectedItemId = R.id.mainScreenBottomBtn
+            when {
+                isOnMainScreen() -> hideApp()
+                isOnOfficeDetails() -> exitFromDetailsScreen()
+                else -> binding.bottomNavigation.selectedItemId = R.id.mainScreenBottomBtn
             }
         }
+    }
+
+    private fun exitFromDetailsScreen(){
+        supportFragmentManager.popBackStack()
+        setupActionBar(getString(R.string.toolbar_offices_title), false)
+    }
+
+    private fun isOnOfficeDetails(): Boolean {
+        return binding.bottomNavigation.selectedItemId == R.id.officesBottomBtn
+                && supportFragmentManager.findFragmentByTag(Router.OFFICE_DETAILS_TAG) != null
+    }
+
+    private fun isOnMainScreen(): Boolean {
+        return binding.bottomNavigation.selectedItemId == R.id.mainScreenBottomBtn
     }
 
     private fun hideApp() {
@@ -102,12 +130,18 @@ class MainActivity : AppCompatActivity() {
 
     private fun startLoginScreen() {
         viewModel.openLoginScreen()
-        binding.bottomNavigation.isVisible = false
+        setupLoginScreen()
+    }
+
+    private fun setupLoginScreen() {
+        binding.bottomNavigation.visibility = View.GONE
+        supportActionBar?.title = getString(R.string.toolbar_login_title)
     }
 
     fun startMainScreen() = lifecycleScope.launch {
         delay(500)
         viewModel.openMainScreen()
         binding.bottomNavigation.isVisible = true
+        supportActionBar?.title = getString(R.string.toolbar_main_title)
     }
 }
