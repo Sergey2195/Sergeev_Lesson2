@@ -41,6 +41,11 @@ class OfficeDetailsFragment : Fragment() {
         binding.officeDescription.text = officeDescription
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     companion object {
 
         fun newInstance(officeName: String, officeDescription: String) =

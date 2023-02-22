@@ -15,6 +15,7 @@ import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
@@ -80,7 +81,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBar(officeName, true)
     }
 
-    private fun setupActionBar(title: String, backButtonVisible: Boolean){
+    private fun setupActionBar(title: String, backButtonVisible: Boolean) {
         supportActionBar?.setDisplayHomeAsUpEnabled(backButtonVisible)
         supportActionBar?.title = title
     }
@@ -105,7 +106,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun exitFromDetailsScreen(){
+    private fun exitFromDetailsScreen() {
         supportFragmentManager.popBackStack()
         setupActionBar(getString(R.string.toolbar_offices_title), false)
     }
@@ -139,7 +140,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startMainScreen() = lifecycleScope.launch {
-        delay(500)
+        delay(1000)
         viewModel.openMainScreen()
         binding.bottomNavigation.isVisible = true
         supportActionBar?.title = getString(R.string.toolbar_main_title)

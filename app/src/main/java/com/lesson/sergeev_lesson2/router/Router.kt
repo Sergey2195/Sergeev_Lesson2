@@ -32,12 +32,13 @@ class Router {
         openFragment(LoginFragment.newInstance(), false, LOGIN_SCREEN_TAG, null)
     }
 
-    fun openDetailsScreen(officeName: String, officeDescription: String){
+    fun openDetailsScreen(officeName: String, officeDescription: String) {
         openFragment(
             OfficeDetailsFragment.newInstance(officeName, officeDescription),
             true,
             OFFICE_DETAILS_TAG,
-            null)
+            null
+        )
     }
 
     private fun openFragment(

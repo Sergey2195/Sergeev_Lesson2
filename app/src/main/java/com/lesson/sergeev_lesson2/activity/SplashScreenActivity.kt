@@ -1,10 +1,10 @@
 package com.lesson.sergeev_lesson2.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.appcompat.app.AppCompatActivity
 import com.lesson.sergeev_lesson2.R
 
 class SplashScreenActivity : AppCompatActivity() {

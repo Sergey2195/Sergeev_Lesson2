@@ -8,6 +8,8 @@ import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -17,8 +19,6 @@ import com.lesson.sergeev_lesson2.R
 import com.lesson.sergeev_lesson2.activity.MainActivity
 import com.lesson.sergeev_lesson2.databinding.FragmentLoginBinding
 import com.lesson.sergeev_lesson2.viewModels.LoginViewModel
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
@@ -34,10 +34,39 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observeFlows()
         addListeners()
+    }
+
+    private fun observeFlows() {
+        lifecycleScope.launchWhenStarted {
+            loginViewModel.passwordErrorStateFlow.collect { isError ->
+                when (isError) {
+                    true -> setError()
+                    false -> setNoError()
+                }
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            loginViewModel.btnCanClickedStateFlow.collect { canClick ->
+                val alpha = if (canClick) 1f else 0.4f
+                changeButtonClickableAndAlpha(canClick, alpha)
+            }
+        }
+        lifecycleScope.launchWhenStarted {
+            loginViewModel.passwordIsVisibleStateFlow.collect { isVisible ->
+                val iconId = if (!isVisible) R.drawable.ic_invisible else R.drawable.ic_visible
+                val drawable = AppCompatResources.getDrawable(requireContext(), iconId)
+                changePasswordVisibility(isVisible, drawable)
+            }
+        }
     }
 
     private fun addListeners() {
@@ -52,10 +81,21 @@ class LoginFragment : Fragment() {
     }
 
     private fun startMainScreen() {
-        lifecycleScope.launch {
-            binding.groupViews.isVisible = false
-            binding.progressBar.isVisible = true
-            (requireActivity() as MainActivity).startMainScreen()
+        hideSoftKeyboard()
+        binding.groupViews.isVisible = false
+        binding.progressBar.isVisible = true
+        (requireActivity() as MainActivity).startMainScreen()
+    }
+
+    private fun hideSoftKeyboard() {
+        val inputMethodManager: InputMethodManager = requireContext().getSystemService(
+            AppCompatActivity.INPUT_METHOD_SERVICE
+        ) as InputMethodManager
+        if (inputMethodManager.isAcceptingText) {
+            inputMethodManager.hideSoftInputFromWindow(
+                requireActivity().currentFocus!!.windowToken,
+                0
+            )
         }
     }
 
@@ -88,30 +128,6 @@ class LoginFragment : Fragment() {
             isClickable = btnIsClickable
             alpha = btnAlpha
         }
-
-    private fun observeFlows() {
-        lifecycleScope.launchWhenStarted {
-            loginViewModel.passwordErrorStateFlow.collect { isError ->
-                when (isError) {
-                    true -> setError()
-                    false -> setNoError()
-                }
-            }
-        }
-        lifecycleScope.launchWhenStarted {
-            loginViewModel.btnCanClickedStateFlow.collect { canClick ->
-                val alpha = if (canClick) 1f else 0.4f
-                changeButtonClickableAndAlpha(canClick, alpha)
-            }
-        }
-        lifecycleScope.launchWhenStarted {
-            loginViewModel.passwordIsVisibleStateFlow.collect { isVisible ->
-                val iconId = if (!isVisible) R.drawable.ic_invisible else R.drawable.ic_visible
-                val drawable = AppCompatResources.getDrawable(requireContext(), iconId)
-                changePasswordVisibility(isVisible, drawable)
-            }
-        }
-    }
 
 
     private fun setError() = with(binding.passwordEditText) {

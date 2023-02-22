@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class LoginViewModel: ViewModel() {
+class LoginViewModel : ViewModel() {
     private val _passwordErrorStateFlow = MutableStateFlow(false)
     val passwordErrorStateFlow
         get() = _passwordErrorStateFlow.asStateFlow()
@@ -15,28 +15,28 @@ class LoginViewModel: ViewModel() {
     val passwordIsVisibleStateFlow
         get() = _passwordIsVisibleStateFlow.asStateFlow()
 
-    fun checkPassword(password: String): Boolean{
-        return if (password != RIGHT_PASSWORD){
+    fun checkPassword(password: String): Boolean {
+        return if (password != RIGHT_PASSWORD) {
             _passwordErrorStateFlow.value = true
             false
-        }else{
+        } else {
             true
         }
     }
 
-    fun changePasswordVisibility(){
+    fun changePasswordVisibility() {
         _passwordIsVisibleStateFlow.value = !_passwordIsVisibleStateFlow.value
     }
 
-    fun passwordEditTextChanged(password: String){
-        if (_passwordErrorStateFlow.value){
+    fun passwordEditTextChanged(password: String) {
+        if (_passwordErrorStateFlow.value) {
             _passwordErrorStateFlow.value = false
         }
         _btnCanClickedStateFlow.value = password.isNotEmpty()
 
     }
 
-    companion object{
+    companion object {
         private const val RIGHT_PASSWORD = "12345"
     }
 }
