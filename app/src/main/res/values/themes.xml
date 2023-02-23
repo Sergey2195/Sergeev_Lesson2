@@ -13,4 +13,16 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="WatchViewDefaultStyle">
+        <item name="hour_color">@color/black</item>
+        <item name="minutes_color">@color/red</item>
+        <item name="seconds_color">@color/blue</item>
+        <item name="hour_width">8.0</item>
+        <item name="minutes_width">6.0</item>
+        <item name="seconds_width">3.0</item>
+        <item name="hour_ratio">0.4</item>
+        <item name="minutes_ratio">0.6</item>
+        <item name="seconds_ratio">0.8</item>
+    </style>
 </resources>
