@@ -17,4 +17,6 @@
     <string name="vacancies">Вакансии</string>
     <string name="gallery">Галерея</string>
     <string name="greeting">Приветствуем вас в Aston</string>
+    <string name="title_text_example">Android trainee</string>
+    <string name="subtitle_text_example">Стажировка по направлению Android</string>
 </resources>

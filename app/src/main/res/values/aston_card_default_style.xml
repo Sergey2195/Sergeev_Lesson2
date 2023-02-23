@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="aston_default_style">
+        <item name="title_text">@string/title_text_example</item>
+        <item name="subtitle_text">@string/subtitle_text_example</item>
+        <item name="logo_image_res">@drawable/logo_aston</item>
+        <item name="logo_image_width">84dp</item>
+        <item name="logo_image_height">84dp</item>
+    </style>
+</resources>
