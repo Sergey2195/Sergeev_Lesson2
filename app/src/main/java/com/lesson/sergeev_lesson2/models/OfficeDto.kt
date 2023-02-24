@@ -11,12 +11,12 @@ sealed class OfficeDto {
 data class RuOfficeDto(
     override val officeName: String,
     override val officeDetails: String,
-    override val type: Int = R.layout.ru_office
+    override val type: Int = R.layout.ru_office_item
 ) : OfficeDto()
 
 data class ByOfficeDto(
     override val officeName: String,
     override val officeDetails: String,
-    override val type: Int = R.layout.by_office
+    override val type: Int = R.layout.by_office_item
 ):OfficeDto()
 
