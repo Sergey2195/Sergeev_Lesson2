@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.lesson.sergeev_lesson2.R
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
+import com.lesson.sergeev_lesson2.models.OfficeDto
 import com.lesson.sergeev_lesson2.router.Router
 import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import kotlinx.coroutines.delay
@@ -77,9 +78,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.openOfficesScreen()
     }
 
-    fun openOfficeDetails(officeName: String) {
-        viewModel.openDetailsScreen(officeName)
-        setupActionBar(officeName, true)
+    fun openOfficeDetails(officeDto: OfficeDto) {
+        viewModel.openDetailsScreen(officeDto)
+        setupActionBar(officeDto.officeName, true)
     }
 
     private fun setupActionBar(title: String, backButtonVisible: Boolean) {

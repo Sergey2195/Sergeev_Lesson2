@@ -38,4 +38,14 @@
     <string name="toolbar_main_title">Main Screen</string>
     <string name="toolbar_vacancies_title">Vacancies</string>
     <string name="toolbar_offices_title">Offices</string>
+    <string name="moscowOfficeName">Moscow</string>
+    <string name="moscowOfficeDesription">Presnenskaya naberezhnaya, d.6, str. 2, BTS «Bashnya Imperiya», 3 podyezd, 53 etazh, ofis 13</string>
+    <string name="kazanOfficeName">Kazan</string>
+    <string name="kazanOfficeDesription">st. N. Ershova, 76/1, office. 213</string>
+    <string name="rostovOnDonOfficeName">Rostov-On-Don</string>
+    <string name="rostovOnDonOfficeDesription">st. Tekucheva, 246, 3rd floor</string>
+    <string name="minskOfficeName">Minsk</string>
+    <string name="minskOfficeDesription">Pobediteley Ave, 7A</string>
+    <string name="gomelOfficeName">Gomel</string>
+    <string name="gomelOfficeDesription">st. Sovetskya, 41B</string>
 </resources>
