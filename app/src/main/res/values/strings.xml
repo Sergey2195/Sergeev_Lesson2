@@ -48,4 +48,5 @@
     <string name="minskOfficeDesription">Pobediteley Ave, 7A</string>
     <string name="gomelOfficeName">Gomel</string>
     <string name="gomelOfficeDesription">st. Sovetskya, 41B</string>
+    <string name="find_hint">Enter a request</string>
 </resources>
