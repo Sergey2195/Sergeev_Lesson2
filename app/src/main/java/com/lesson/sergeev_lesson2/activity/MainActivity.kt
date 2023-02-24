@@ -147,4 +147,18 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.isVisible = true
         supportActionBar?.title = getString(R.string.toolbar_main_title)
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString(TITLE_VALUE, supportActionBar?.title.toString())
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        supportActionBar?.title = savedInstanceState.getString(TITLE_VALUE)
+    }
+
+    companion object{
+        private const val TITLE_VALUE = "title"
+    }
 }

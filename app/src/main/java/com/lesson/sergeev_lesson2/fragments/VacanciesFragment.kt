@@ -39,6 +39,14 @@ class VacanciesFragment : Fragment() {
         setupClickListeners()
     }
 
+    private fun prepareRecyclerView() {
+        binding.vacanciesRecyclerView.adapter = adapter
+        binding.vacanciesRecyclerView.layoutManager = LinearLayoutManager(
+            requireContext(), RecyclerView.VERTICAL, false
+        )
+        binding.vacanciesRecyclerView.addOnScrollListener(getOnScrollListener())
+    }
+
     private fun observeStateFlow() = lifecycleScope.launchWhenCreated {
         viewModel.dataStateFlow.collect { list ->
             adapter.submitList(list)
@@ -61,14 +69,6 @@ class VacanciesFragment : Fragment() {
         override fun afterTextChanged(p0: Editable?) {
         }
 
-    }
-
-    private fun prepareRecyclerView() {
-        binding.vacanciesRecyclerView.adapter = adapter
-        binding.vacanciesRecyclerView.layoutManager = LinearLayoutManager(
-            requireContext(), RecyclerView.VERTICAL, false
-        )
-        binding.vacanciesRecyclerView.addOnScrollListener(getOnScrollListener())
     }
 
     private fun getOnScrollListener(): RecyclerView.OnScrollListener =

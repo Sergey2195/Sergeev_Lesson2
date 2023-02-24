@@ -2,10 +2,7 @@ package com.lesson.sergeev_lesson2.utils
 
 import android.content.Context
 import com.lesson.sergeev_lesson2.R
-import com.lesson.sergeev_lesson2.models.ByOfficeDto
-import com.lesson.sergeev_lesson2.models.OfficeDto
-import com.lesson.sergeev_lesson2.models.RuOfficeDto
-import com.lesson.sergeev_lesson2.models.VacancyDto
+import com.lesson.sergeev_lesson2.models.*
 import kotlin.random.Random
 
 object HardcodeData {
@@ -42,4 +39,19 @@ object HardcodeData {
             vacancyDescription = "Опыт работы от ${Random.nextInt(2, 6)} лет"
         )
     }
+
+    fun getListOfMainScreen(context: Context) = listOf(
+        MainScreenDto(R.layout.main_screen_image),
+        MainScreenDto(R.layout.aston_card_view),
+        MainScreenDto(
+            R.layout.main_screen_text,
+            context.getString(R.string.about_us_title),
+            0
+        ),
+        MainScreenDto(
+            R.layout.main_screen_text,
+            context.getString(R.string.about_us_content),
+            1
+        )
+    )
 }

@@ -7,12 +7,12 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 
-class VacanciesViewModel: ViewModel() {
+class VacanciesViewModel : ViewModel() {
     private val _dataStateFlow = MutableStateFlow(HardcodeData.getHardcodedVacancies())
     val dataStateFlow: StateFlow<List<VacancyDto>>
         get() = _dataStateFlow.asStateFlow()
 
-    fun textFilterChanged(filter:String){
+    fun textFilterChanged(filter: String) {
         val filtered = HardcodeData.getHardcodedVacancies().filter {
             it.vacancyTitle.lowercase().contains(filter.lowercase()) ||
                     it.vacancyDescription.lowercase().contains(filter.lowercase())
