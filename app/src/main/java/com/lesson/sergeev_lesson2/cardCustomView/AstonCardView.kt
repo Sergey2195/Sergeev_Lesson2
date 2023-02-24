@@ -1,4 +1,4 @@
-package com.lesson.sergeev_lesson2
+package com.lesson.sergeev_lesson2.cardCustomView
 
 import android.content.Context
 import android.graphics.drawable.Drawable
@@ -7,6 +7,7 @@ import android.util.TypedValue
 import android.view.LayoutInflater
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.cardview.widget.CardView
+import com.lesson.sergeev_lesson2.R
 import com.lesson.sergeev_lesson2.databinding.AstonCardViewBinding
 
 class AstonCardView(

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainScreenBottomBtn"
+        android:enabled="true"
+        android:icon="@drawable/home_icon_silhouette_svgrepo_com"
+        android:title="@string/home_title_bnb"/>
+    <item
+        android:id="@+id/vacancyBottomBtn"
+        android:enabled="true"
+        android:icon="@drawable/baseline_vacancy"
+        android:title="@string/vacancies_title_bnb"
+        app:itemIconSize="48dp"/>
+    <item
+        android:id="@+id/officesBottomBtn"
+        android:enabled="true"
+        android:icon="@drawable/offices_buildings_svgrepo_com"
+        android:title="@string/offices_title_bnb"
+        app:itemIconSize="48dp"/>
+</menu>

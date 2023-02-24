@@ -28,4 +28,12 @@
         <item name="android:textSize">16sp</item>
     </style>
     <style name="AstonCardViewStyle" parent="aston_default_style"/>
+    <style name="ChipsFragmentStyle" parent="ChipsStyle">
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textSize">30sp</item>
+    </style>
 </resources>

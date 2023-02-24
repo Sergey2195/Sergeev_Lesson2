@@ -18,4 +18,24 @@
     <string name="greeting">Приветствуем вас в Aston</string>
     <string name="title_text_example">Android trainee</string>
     <string name="subtitle_text_example">Android Internship</string>
+    <string name="home_title_bnb">Home</string>
+    <string name="vacancies_title_bnb">Vacancies</string>
+    <string name="offices_title_bnb">Offices</string>
+    <string name="hint_login">Login</string>
+    <string name="hint_password">Password</string>
+    <string name="login_title_enter">Enter</string>
+    <string name="login_btn_title">Enter</string>
+    <string name="password_error_text">Wrong password</string>
+    <string name="flutter_title">Flutter Developer</string>
+    <string name="flutter_descr">Опыт работы с Flutter/Dart от 3-х лет</string>
+    <string name="fullstack_title">Full-Stack Developer</string>
+    <string name="fullstack_descr">Уверенное владение React, Java</string>
+    <string name="android_title">Android Developer</string>
+    <string name="android_descr">Опыт коммерческой разработки под Android от 3-х лет;</string>
+    <string name="ios_title">IOS Developer</string>
+    <string name="ios_descr">Опыт разработки под платформу iOS от 3-х лет;</string>
+    <string name="toolbar_login_title">Login Screen</string>
+    <string name="toolbar_main_title">Main Screen</string>
+    <string name="toolbar_vacancies_title">Vacancies</string>
+    <string name="toolbar_offices_title">Offices</string>
 </resources>
