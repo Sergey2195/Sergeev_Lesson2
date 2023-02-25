@@ -12,6 +12,7 @@ import com.lesson.sergeev_lesson2.viewHolders.MainScreenViewHolder
 import com.lesson.sergeev_lesson2.viewHolders.TextViewHolder
 
 class MainScreenAdapter : RecyclerView.Adapter<MainScreenViewHolder>() {
+
     private var listData: List<MainScreenDto> = emptyList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainScreenViewHolder {

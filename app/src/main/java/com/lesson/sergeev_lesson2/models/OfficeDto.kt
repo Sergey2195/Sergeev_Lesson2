@@ -18,5 +18,5 @@ data class ByOfficeDto(
     override val officeName: String,
     override val officeDetails: String,
     override val type: Int = R.layout.by_office_item
-):OfficeDto()
+) : OfficeDto()
 

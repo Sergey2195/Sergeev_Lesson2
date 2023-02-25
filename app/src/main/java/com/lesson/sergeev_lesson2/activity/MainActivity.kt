@@ -16,7 +16,6 @@ import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
@@ -158,7 +157,7 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.title = savedInstanceState.getString(TITLE_VALUE)
     }
 
-    companion object{
+    companion object {
         private const val TITLE_VALUE = "title"
     }
 }

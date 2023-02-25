@@ -18,6 +18,7 @@ import com.lesson.sergeev_lesson2.utils.HideKeyboard
 import com.lesson.sergeev_lesson2.viewModels.VacanciesViewModel
 
 class VacanciesFragment : Fragment() {
+
     private var _binding: FragmentVacanciesBinding? = null
     private val binding
         get() = _binding!!

@@ -20,6 +20,7 @@ import com.lesson.sergeev_lesson2.utils.HideKeyboard
 import com.lesson.sergeev_lesson2.viewModels.LoginViewModel
 
 class LoginFragment : Fragment() {
+
     private var _binding: FragmentLoginBinding? = null
     private val binding
         get() = _binding!!

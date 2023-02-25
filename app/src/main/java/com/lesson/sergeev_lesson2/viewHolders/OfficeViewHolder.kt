@@ -10,8 +10,7 @@ abstract class OfficeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     abstract fun populate(officeDto: OfficeDto, listener: ((OfficeDto) -> Unit)?)
 }
 
-class RuOfficeViewHolder(private val binding: RuOfficeItemBinding) :
-    OfficeViewHolder(binding.root) {
+class RuOfficeViewHolder(private val binding: RuOfficeItemBinding) : OfficeViewHolder(binding.root) {
 
     override fun populate(officeDto: OfficeDto, listener: ((OfficeDto) -> Unit)?) {
         binding.officeTitle.text = officeDto.officeName
@@ -21,8 +20,7 @@ class RuOfficeViewHolder(private val binding: RuOfficeItemBinding) :
     }
 }
 
-class ByOfficeViewHolder(private val binding: ByOfficeItemBinding) :
-    OfficeViewHolder(binding.root) {
+class ByOfficeViewHolder(private val binding: ByOfficeItemBinding) : OfficeViewHolder(binding.root) {
 
     override fun populate(officeDto: OfficeDto, listener: ((OfficeDto) -> Unit)?) {
         binding.officeTitle.text = officeDto.officeName

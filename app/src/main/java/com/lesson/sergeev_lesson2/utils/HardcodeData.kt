@@ -32,7 +32,7 @@ object HardcodeData {
         )
     }
 
-    fun getHardcodedVacancies() = List(40){ index->
+    fun getHardcodedVacancies() = List(40) { index ->
         VacancyDto(
             id = index,
             vacancyTitle = "${directionName.random()} Developer",

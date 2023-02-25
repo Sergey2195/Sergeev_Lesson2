@@ -19,9 +19,7 @@ class LoginViewModel : ViewModel() {
         return if (password != RIGHT_PASSWORD) {
             _passwordErrorStateFlow.value = true
             false
-        } else {
-            true
-        }
+        } else true
     }
 
     fun changePasswordVisibility() {
