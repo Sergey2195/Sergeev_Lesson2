@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="10dp"
+    android:id="@+id/officeCardView">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/aston_color"
+        android:paddingVertical="10dp">
+        <TextView
+            android:id="@+id/officeTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/officesNameStyle"
+            android:layout_marginStart="20dp"
+            tools:text="Example"/>
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/russia_flag_icon"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.lesson.sergeev_lesson2.activity.MainActivity
 import com.lesson.sergeev_lesson2.databinding.FragmentOfficeDetailsBinding
 
 
@@ -37,8 +38,13 @@ class OfficeDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupViews()
+    }
+
+    private fun setupViews(){
         binding.officeName.text = officeName
         binding.officeDescription.text = officeDescription
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onDestroyView() {

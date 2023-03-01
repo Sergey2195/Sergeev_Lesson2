@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context=".fragments.VacanciesFragment">
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-    <com.lesson.sergeev_lesson2.cardCustomView.AstonCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="@string/flutter_title"
-        android:layout_marginHorizontal="8dp"
-        app:subtitle_text="@string/flutter_descr"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-    <com.lesson.sergeev_lesson2.cardCustomView.AstonCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="@string/fullstack_title"
-        android:layout_marginHorizontal="8dp"
-        app:subtitle_text="@string/fullstack_descr"/>
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-    <com.lesson.sergeev_lesson2.cardCustomView.AstonCardView
-        android:layout_width="match_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/searchVacancyEditText"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
-        app:title_text="@string/android_title"
-        app:subtitle_text="@string/android_descr"/>
-    <Space
+        android:layout_marginTop="16dp"
+        android:autofillHints="false"
+        android:background="@drawable/edit_text_background"
+        android:hint="@string/find_hint"
+        android:inputType="text"
+        android:paddingHorizontal="30dp"
+        android:paddingVertical="8dp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/vacanciesRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="10dp"/>
-    <com.lesson.sergeev_lesson2.cardCustomView.AstonCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:title_text="@string/ios_title"
-        android:layout_marginHorizontal="8dp"
-        app:subtitle_text="@string/ios_descr"/>
-</LinearLayout>
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchVacancyEditText" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,15 +10,16 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.lesson.sergeev_lesson2.R
 import com.lesson.sergeev_lesson2.databinding.ActivityMainBinding
+import com.lesson.sergeev_lesson2.models.OfficeDto
 import com.lesson.sergeev_lesson2.router.Router
 import com.lesson.sergeev_lesson2.viewModels.MainViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -76,9 +77,9 @@ class MainActivity : AppCompatActivity() {
         viewModel.openOfficesScreen()
     }
 
-    fun openOfficeDetails(officeName: String) {
-        viewModel.openDetailsScreen(officeName)
-        setupActionBar(officeName, true)
+    fun openOfficeDetails(officeDto: OfficeDto) {
+        viewModel.openDetailsScreen(officeDto)
+        setupActionBar(officeDto.officeName, true)
     }
 
     private fun setupActionBar(title: String, backButtonVisible: Boolean) {
@@ -144,5 +145,19 @@ class MainActivity : AppCompatActivity() {
         viewModel.openMainScreen()
         binding.bottomNavigation.isVisible = true
         supportActionBar?.title = getString(R.string.toolbar_main_title)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState.putString(TITLE_VALUE, supportActionBar?.title.toString())
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        supportActionBar?.title = savedInstanceState.getString(TITLE_VALUE)
+    }
+
+    companion object {
+        private const val TITLE_VALUE = "title"
     }
 }

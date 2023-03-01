@@ -39,4 +39,15 @@
     <string name="toolbar_main_title">Главная страница</string>
     <string name="toolbar_vacancies_title">Вакансии</string>
     <string name="toolbar_offices_title">Офисы</string>
+    <string name="moscowOfficeName">Москва</string>
+    <string name="moscowOfficeDesription">Пресненская набережная, д.6, стр. 2, БЦ «Башня Империя», 3 подъезд, 53 этаж, офис 13</string>
+    <string name="kazanOfficeName">Казань</string>
+    <string name="kazanOfficeDesription">ул. Н. Ершова, 76/1, оф. 213</string>
+    <string name="rostovOnDonOfficeName">Ростов-на-Дону</string>
+    <string name="rostovOnDonOfficeDesription">ул. Текучева, 246, 3 этаж</string>
+    <string name="minskOfficeName">Минск</string>
+    <string name="minskOfficeDesription">пр-т Победителей, 7А</string>
+    <string name="gomelOfficeName">Гомель</string>
+    <string name="gomelOfficeDesription">ул. Советская, 41Б</string>
+    <string name="find_hint">Введите запрос</string>
 </resources>

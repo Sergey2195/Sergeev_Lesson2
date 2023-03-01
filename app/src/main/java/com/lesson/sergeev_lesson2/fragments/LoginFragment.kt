@@ -8,8 +8,6 @@ import android.text.method.PasswordTransformationMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
@@ -18,9 +16,11 @@ import androidx.lifecycle.lifecycleScope
 import com.lesson.sergeev_lesson2.R
 import com.lesson.sergeev_lesson2.activity.MainActivity
 import com.lesson.sergeev_lesson2.databinding.FragmentLoginBinding
+import com.lesson.sergeev_lesson2.utils.HideKeyboard
 import com.lesson.sergeev_lesson2.viewModels.LoginViewModel
 
 class LoginFragment : Fragment() {
+
     private var _binding: FragmentLoginBinding? = null
     private val binding
         get() = _binding!!
@@ -81,22 +81,10 @@ class LoginFragment : Fragment() {
     }
 
     private fun startMainScreen() {
-        hideSoftKeyboard()
+        HideKeyboard.hideSoftKeyboard(requireContext(), requireActivity())
         binding.groupViews.isVisible = false
         binding.progressBar.isVisible = true
         (requireActivity() as MainActivity).startMainScreen()
-    }
-
-    private fun hideSoftKeyboard() {
-        val inputMethodManager: InputMethodManager = requireContext().getSystemService(
-            AppCompatActivity.INPUT_METHOD_SERVICE
-        ) as InputMethodManager
-        if (inputMethodManager.isAcceptingText) {
-            inputMethodManager.hideSoftInputFromWindow(
-                requireActivity().currentFocus!!.windowToken,
-                0
-            )
-        }
     }
 
     private fun changeVisibilityIconListener() {

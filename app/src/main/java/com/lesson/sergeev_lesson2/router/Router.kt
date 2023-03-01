@@ -6,6 +6,7 @@ import com.lesson.sergeev_lesson2.activity.MainActivity
 import com.lesson.sergeev_lesson2.fragments.*
 
 class Router {
+
     private var mainActivity: MainActivity? = null
 
     fun onCreate(activity: MainActivity) {
